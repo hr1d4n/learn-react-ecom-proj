@@ -71,7 +71,12 @@ const provider = new GoogleAuthProvider();
 
 /*varianta curs udemy*/
 provider.setCustomParameters({prompt: 'select_account'});
-export const signInWithGoogle = () => signInWithPopup(auth, provider);
+export const signInWithGoogle = () => signInWithPopup(auth, provider)
+  .then((result) => {
+
+  }).catch((error) => {
+    console.log(error);
+  });
 
 /*varianta noua din documentatia firebase*/
 /*export const signInWithGoogle = () => signInWithPopup(auth, provider)
